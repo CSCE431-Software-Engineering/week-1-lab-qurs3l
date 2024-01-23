@@ -479,3 +479,603 @@ Processing by BooksController#index as TURBO_STREAM
 Completed 200 OK in 9ms (Views: 7.6ms | ActiveRecord: 0.4ms | Allocations: 2413)
 
 
+Started GET "/" for 192.168.65.1 at 2024-01-23 22:37:37 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BooksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (1.9ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:6
+  Rendered books/index.html.erb within layouts/application (Duration: 10.0ms | Allocations: 1645)
+  Rendered layout layouts/application.html.erb (Duration: 144.9ms | Allocations: 35169)
+Completed 200 OK in 178ms (Views: 148.9ms | ActiveRecord: 1.9ms | Allocations: 40188)
+
+
+Started GET "/books/new" for 192.168.65.1 at 2024-01-23 22:45:51 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by BooksController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/_form.html.erb (Duration: 6.4ms | Allocations: 2173)
+  Rendered books/new.html.erb within layouts/application (Duration: 8.3ms | Allocations: 2559)
+  Rendered layout layouts/application.html.erb (Duration: 42.7ms | Allocations: 17533)
+Completed 200 OK in 159ms (Views: 44.2ms | ActiveRecord: 50.0ms | Allocations: 25717)
+
+
+Started GET "/books" for 192.168.65.1 at 2024-01-23 22:45:53 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by BooksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (1.7ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:6
+  Rendered books/index.html.erb within layouts/application (Duration: 6.6ms | Allocations: 956)
+  Rendered layout layouts/application.html.erb (Duration: 14.9ms | Allocations: 2291)
+Completed 200 OK in 20ms (Views: 14.8ms | ActiveRecord: 1.7ms | Allocations: 2667)
+
+
+Started GET "/books/new" for 192.168.65.1 at 2024-01-23 22:45:54 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by BooksController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/_form.html.erb (Duration: 2.9ms | Allocations: 763)
+  Rendered books/new.html.erb within layouts/application (Duration: 3.7ms | Allocations: 854)
+  Rendered layout layouts/application.html.erb (Duration: 12.4ms | Allocations: 2185)
+Completed 200 OK in 17ms (Views: 14.0ms | ActiveRecord: 0.0ms | Allocations: 2465)
+
+
+Started POST "/books" for 192.168.65.1 at 2024-01-23 22:45:56 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by BooksController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "book"=>{"title"=>"hjh"}, "commit"=>"Create Book"}
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/books_controller.rb:27:in `block in create'
+  [1m[36mBook Create (14.5ms)[0m  [1m[32mINSERT INTO "books" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["title", "hjh"], ["created_at", "2024-01-23 22:45:56.971168"], ["updated_at", "2024-01-23 22:45:56.971168"]]
+  ↳ app/controllers/books_controller.rb:27:in `block in create'
+  [1m[36mTRANSACTION (2.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/books_controller.rb:27:in `block in create'
+Redirected to http://127.0.0.1:3000/books/69
+Completed 302 Found in 41ms (ActiveRecord: 17.5ms | Allocations: 3856)
+
+
+Started GET "/books/69" for 192.168.65.1 at 2024-01-23 22:45:57 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by BooksController#show as TURBO_STREAM
+  Parameters: {"id"=>"69"}
+  [1m[36mBook Load (1.6ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:63:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/_book.html.erb (Duration: 0.8ms | Allocations: 203)
+  Rendered books/show.html.erb within layouts/application (Duration: 4.4ms | Allocations: 1514)
+  Rendered layout layouts/application.html.erb (Duration: 7.3ms | Allocations: 2954)
+Completed 200 OK in 17ms (Views: 8.0ms | ActiveRecord: 1.9ms | Allocations: 5808)
+
+
+Started GET "/books" for 192.168.65.1 at 2024-01-23 22:46:01 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by BooksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.6ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:6
+  Rendered books/_book.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered books/index.html.erb within layouts/application (Duration: 5.5ms | Allocations: 1020)
+  Rendered layout layouts/application.html.erb (Duration: 14.3ms | Allocations: 2357)
+Completed 200 OK in 20ms (Views: 15.5ms | ActiveRecord: 0.6ms | Allocations: 2671)
+
+
+Started GET "/books/69" for 192.168.65.1 at 2024-01-23 22:46:04 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"69"}
+  [1m[36mBook Load (0.6ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:63:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/_book.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered books/show.html.erb within layouts/application (Duration: 1.9ms | Allocations: 573)
+  Rendered layout layouts/application.html.erb (Duration: 10.3ms | Allocations: 1896)
+Completed 200 OK in 18ms (Views: 11.6ms | ActiveRecord: 0.6ms | Allocations: 2688)
+
+
+Started DELETE "/books/69" for 192.168.65.1 at 2024-01-23 22:46:07 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by BooksController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"69"}
+  [1m[36mBook Load (0.8ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:63:in `set_book'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/books_controller.rb:52:in `destroy'
+  [1m[36mBook Destroy (3.9ms)[0m  [1m[31mDELETE FROM "books" WHERE "books"."id" = $1[0m  [["id", 69]]
+  ↳ app/controllers/books_controller.rb:52:in `destroy'
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/books_controller.rb:52:in `destroy'
+Redirected to http://127.0.0.1:3000/books
+Completed 302 Found in 21ms (ActiveRecord: 6.3ms | Allocations: 2527)
+
+
+Started GET "/books" for 192.168.65.1 at 2024-01-23 22:46:07 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by BooksController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:6
+  Rendered books/index.html.erb within layouts/application (Duration: 2.8ms | Allocations: 784)
+  Rendered layout layouts/application.html.erb (Duration: 8.0ms | Allocations: 2115)
+Completed 200 OK in 11ms (Views: 8.6ms | ActiveRecord: 0.4ms | Allocations: 2391)
+
+
+Started GET "/" for 192.168.65.1 at 2024-01-23 22:59:42 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by BooksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.8ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:6
+  Rendered books/index.html.erb within layouts/application (Duration: 111.1ms | Allocations: 4087)
+  Rendered layout layouts/application.html.erb (Duration: 156.5ms | Allocations: 19069)
+Completed 200 OK in 164ms (Views: 125.1ms | ActiveRecord: 33.3ms | Allocations: 20438)
+
+
+Started GET "/books/new" for 192.168.65.1 at 2024-01-23 22:59:47 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by BooksController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/_form.html.erb (Duration: 1.5ms | Allocations: 865)
+  Rendered books/new.html.erb within layouts/application (Duration: 2.1ms | Allocations: 960)
+  Rendered layout layouts/application.html.erb (Duration: 6.4ms | Allocations: 2293)
+Completed 200 OK in 39ms (Views: 26.4ms | ActiveRecord: 0.0ms | Allocations: 3664)
+
+
+Started POST "/books" for 192.168.65.1 at 2024-01-23 22:59:54 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by BooksController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "book"=>{"title"=>"1984"}, "commit"=>"Create Book"}
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/books_controller.rb:27:in `block in create'
+  [1m[36mBook Create (14.5ms)[0m  [1m[32mINSERT INTO "books" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["title", "1984"], ["created_at", "2024-01-23 22:59:54.314334"], ["updated_at", "2024-01-23 22:59:54.314334"]]
+  ↳ app/controllers/books_controller.rb:27:in `block in create'
+  [1m[36mTRANSACTION (2.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/books_controller.rb:27:in `block in create'
+Redirected to http://127.0.0.1:3000/books/70
+Completed 302 Found in 32ms (ActiveRecord: 17.6ms | Allocations: 2506)
+
+
+Started GET "/books/70" for 192.168.65.1 at 2024-01-23 22:59:54 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by BooksController#show as TURBO_STREAM
+  Parameters: {"id"=>"70"}
+  [1m[36mBook Load (2.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 70], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:63:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/_book.html.erb (Duration: 0.1ms | Allocations: 25)
+  Rendered books/show.html.erb within layouts/application (Duration: 2.4ms | Allocations: 683)
+  Rendered layout layouts/application.html.erb (Duration: 8.0ms | Allocations: 2009)
+Completed 200 OK in 18ms (Views: 9.1ms | ActiveRecord: 2.4ms | Allocations: 3447)
+
+
+Started DELETE "/books/70" for 192.168.65.1 at 2024-01-23 22:59:58 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by BooksController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"70"}
+  [1m[36mBook Load (1.7ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 70], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:63:in `set_book'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/books_controller.rb:52:in `destroy'
+  [1m[36mBook Destroy (4.4ms)[0m  [1m[31mDELETE FROM "books" WHERE "books"."id" = $1[0m  [["id", 70]]
+  ↳ app/controllers/books_controller.rb:52:in `destroy'
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/books_controller.rb:52:in `destroy'
+Redirected to http://127.0.0.1:3000/books
+Completed 302 Found in 25ms (ActiveRecord: 7.6ms | Allocations: 2424)
+
+
+Started GET "/books" for 192.168.65.1 at 2024-01-23 22:59:58 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by BooksController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:6
+  Rendered books/index.html.erb within layouts/application (Duration: 2.6ms | Allocations: 780)
+  Rendered layout layouts/application.html.erb (Duration: 7.9ms | Allocations: 2113)
+Completed 200 OK in 10ms (Views: 8.3ms | ActiveRecord: 0.4ms | Allocations: 2390)
+
+
+Started GET "/books/new" for 192.168.65.1 at 2024-01-23 23:00:00 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by BooksController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/_form.html.erb (Duration: 3.3ms | Allocations: 734)
+  Rendered books/new.html.erb within layouts/application (Duration: 4.4ms | Allocations: 821)
+  Rendered layout layouts/application.html.erb (Duration: 13.3ms | Allocations: 2152)
+Completed 200 OK in 19ms (Views: 15.1ms | ActiveRecord: 0.0ms | Allocations: 2426)
+
+
+Started POST "/books" for 192.168.65.1 at 2024-01-23 23:00:05 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by BooksController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "book"=>{"title"=>"Hello"}, "commit"=>"Create Book"}
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/books_controller.rb:27:in `block in create'
+  [1m[36mBook Create (1.0ms)[0m  [1m[32mINSERT INTO "books" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["title", "Hello"], ["created_at", "2024-01-23 23:00:05.272606"], ["updated_at", "2024-01-23 23:00:05.272606"]]
+  ↳ app/controllers/books_controller.rb:27:in `block in create'
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/books_controller.rb:27:in `block in create'
+Redirected to http://127.0.0.1:3000/books/71
+Completed 302 Found in 18ms (ActiveRecord: 2.5ms | Allocations: 2259)
+
+
+Started GET "/books/71" for 192.168.65.1 at 2024-01-23 23:00:05 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by BooksController#show as TURBO_STREAM
+  Parameters: {"id"=>"71"}
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 71], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:63:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/_book.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered books/show.html.erb within layouts/application (Duration: 1.6ms | Allocations: 561)
+  Rendered layout layouts/application.html.erb (Duration: 6.7ms | Allocations: 1886)
+Completed 200 OK in 12ms (Views: 7.6ms | ActiveRecord: 0.5ms | Allocations: 2650)
+
+
+Started GET "/books" for 192.168.65.1 at 2024-01-23 23:00:07 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by BooksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.6ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:6
+  Rendered books/_book.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered books/index.html.erb within layouts/application (Duration: 5.4ms | Allocations: 898)
+  Rendered layout layouts/application.html.erb (Duration: 13.0ms | Allocations: 2229)
+Completed 200 OK in 17ms (Views: 13.7ms | ActiveRecord: 0.6ms | Allocations: 2502)
+
+
+Started GET "/books/71" for 192.168.65.1 at 2024-01-23 23:00:09 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"71"}
+  [1m[36mBook Load (0.6ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 71], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:63:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/_book.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered books/show.html.erb within layouts/application (Duration: 2.5ms | Allocations: 558)
+  Rendered layout layouts/application.html.erb (Duration: 9.2ms | Allocations: 1881)
+Completed 200 OK in 16ms (Views: 10.4ms | ActiveRecord: 0.6ms | Allocations: 2640)
+
+
+Started GET "/books/71/edit" for 192.168.65.1 at 2024-01-23 23:00:12 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"71"}
+  [1m[36mBook Load (0.6ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 71], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:63:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering books/edit.html.erb within layouts/application
+  Rendered books/_form.html.erb (Duration: 2.7ms | Allocations: 812)
+  Rendered books/edit.html.erb within layouts/application (Duration: 6.3ms | Allocations: 1109)
+  Rendered layout layouts/application.html.erb (Duration: 13.3ms | Allocations: 2434)
+Completed 200 OK in 22ms (Views: 14.6ms | ActiveRecord: 0.6ms | Allocations: 3265)
+
+
+Started PATCH "/books/71" for 192.168.65.1 at 2024-01-23 23:00:13 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by BooksController#update as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "book"=>{"title"=>"Hello"}, "commit"=>"Update Book", "id"=>"71"}
+  [1m[36mBook Load (0.8ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 71], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:63:in `set_book'
+Redirected to http://127.0.0.1:3000/books/71
+Completed 302 Found in 6ms (ActiveRecord: 0.8ms | Allocations: 1108)
+
+
+Started GET "/books/71" for 192.168.65.1 at 2024-01-23 23:00:13 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by BooksController#show as TURBO_STREAM
+  Parameters: {"id"=>"71"}
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 71], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:63:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/_book.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered books/show.html.erb within layouts/application (Duration: 2.0ms | Allocations: 570)
+  Rendered layout layouts/application.html.erb (Duration: 7.2ms | Allocations: 1893)
+Completed 200 OK in 12ms (Views: 8.9ms | ActiveRecord: 0.3ms | Allocations: 2657)
+
+
+Started GET "/books" for 192.168.65.1 at 2024-01-23 23:00:15 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by BooksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.8ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:6
+  Rendered books/_book.html.erb (Duration: 0.2ms | Allocations: 17)
+  Rendered books/index.html.erb within layouts/application (Duration: 6.8ms | Allocations: 906)
+  Rendered layout layouts/application.html.erb (Duration: 15.1ms | Allocations: 2237)
+Completed 200 OK in 21ms (Views: 16.0ms | ActiveRecord: 0.8ms | Allocations: 2510)
+
+
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7992348028875656775)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddFieldsToBooks (20240123230756)
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (12.0ms)[0m  [1m[35mALTER TABLE "books" ADD "author" character varying[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "books" ADD "cost" decimal[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "books" ADD "publication_date" date[0m
+  [1m[36mActiveRecord::SchemaMigration Create (3.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20240123230756"]]
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (2.0ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT pg_advisory_unlock(7992348028875656775)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mBook Load (1.4ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+Started GET "/" for 192.168.65.1 at 2024-01-23 23:20:15 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BooksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (1.2ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:6
+  Rendered books/_book.html.erb (Duration: 0.9ms | Allocations: 230)
+  Rendered books/index.html.erb within layouts/application (Duration: 26.0ms | Allocations: 7908)
+  Rendered layout layouts/application.html.erb (Duration: 96.3ms | Allocations: 39922)
+Completed 200 OK in 114ms (Views: 93.0ms | ActiveRecord: 7.7ms | Allocations: 44821)
+
+
+Started GET "/books/71" for 192.168.65.1 at 2024-01-23 23:20:17 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"71"}
+  [1m[36mBook Load (3.9ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 71], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:63:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/_book.html.erb (Duration: 0.1ms | Allocations: 23)
+  Rendered books/show.html.erb within layouts/application (Duration: 3.2ms | Allocations: 919)
+  Rendered layout layouts/application.html.erb (Duration: 8.7ms | Allocations: 2352)
+Completed 200 OK in 30ms (Views: 9.9ms | ActiveRecord: 4.4ms | Allocations: 5235)
+
+
+Started DELETE "/books/71" for 192.168.65.1 at 2024-01-23 23:20:19 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by BooksController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"71"}
+  [1m[36mBook Load (0.7ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 71], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:63:in `set_book'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/books_controller.rb:52:in `destroy'
+  [1m[36mBook Destroy (8.1ms)[0m  [1m[31mDELETE FROM "books" WHERE "books"."id" = $1[0m  [["id", 71]]
+  ↳ app/controllers/books_controller.rb:52:in `destroy'
+  [1m[36mTRANSACTION (4.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/books_controller.rb:52:in `destroy'
+Redirected to http://0.0.0.0:3000/books
+Completed 302 Found in 27ms (ActiveRecord: 13.6ms | Allocations: 2971)
+
+
+Started GET "/books" for 192.168.65.1 at 2024-01-23 23:20:19 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by BooksController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.7ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:6
+  Rendered books/index.html.erb within layouts/application (Duration: 3.1ms | Allocations: 828)
+  Rendered layout layouts/application.html.erb (Duration: 7.2ms | Allocations: 2269)
+Completed 200 OK in 9ms (Views: 7.3ms | ActiveRecord: 0.7ms | Allocations: 2631)
+
+
+Started GET "/" for 192.168.65.1 at 2024-01-23 23:28:53 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BooksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.9ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:6
+  Rendered books/index.html.erb within layouts/application (Duration: 8.9ms | Allocations: 1845)
+  Rendered layout layouts/application.html.erb (Duration: 77.6ms | Allocations: 34423)
+Completed 200 OK in 95ms (Views: 80.8ms | ActiveRecord: 0.9ms | Allocations: 39323)
+
+
+Started GET "/books/new" for 192.168.65.1 at 2024-01-23 23:28:55 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by BooksController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/_form.html.erb (Duration: 8.3ms | Allocations: 3014)
+  Rendered books/new.html.erb within layouts/application (Duration: 10.9ms | Allocations: 3363)
+  Rendered layout layouts/application.html.erb (Duration: 15.5ms | Allocations: 4824)
+Completed 200 OK in 57ms (Views: 17.0ms | ActiveRecord: 14.3ms | Allocations: 10547)
+
+
+Started POST "/books" for 192.168.65.1 at 2024-01-23 23:29:39 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by BooksController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "book"=>{"title"=>"1984", "author"=>"George Orwell", "cost"=>"10.05", "publication_date"=>"1999-01-01"}, "commit"=>"Create Book"}
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/books_controller.rb:27:in `block in create'
+  [1m[36mBook Create (16.5ms)[0m  [1m[32mINSERT INTO "books" ("title", "created_at", "updated_at", "author", "cost", "publication_date") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "1984"], ["created_at", "2024-01-23 23:29:39.968657"], ["updated_at", "2024-01-23 23:29:39.968657"], ["author", "George Orwell"], ["cost", "10.05"], ["publication_date", "1999-01-01"]]
+  ↳ app/controllers/books_controller.rb:27:in `block in create'
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/books_controller.rb:27:in `block in create'
+Redirected to http://0.0.0.0:3000/books/72
+Completed 302 Found in 52ms (ActiveRecord: 19.8ms | Allocations: 3983)
+
+
+Started GET "/books/72" for 192.168.65.1 at 2024-01-23 23:29:40 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by BooksController#show as TURBO_STREAM
+  Parameters: {"id"=>"72"}
+  [1m[36mBook Load (1.8ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 72], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:63:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/_book.html.erb (Duration: 0.8ms | Allocations: 203)
+  Rendered books/show.html.erb within layouts/application (Duration: 5.2ms | Allocations: 1502)
+  Rendered layout layouts/application.html.erb (Duration: 9.5ms | Allocations: 2940)
+Completed 200 OK in 20ms (Views: 10.4ms | ActiveRecord: 2.0ms | Allocations: 5803)
+
+
+Started GET "/books" for 192.168.65.1 at 2024-01-23 23:29:43 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by BooksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:6
+  Rendered books/_book.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered books/index.html.erb within layouts/application (Duration: 4.7ms | Allocations: 1034)
+  Rendered layout layouts/application.html.erb (Duration: 11.5ms | Allocations: 2368)
+Completed 200 OK in 15ms (Views: 12.1ms | ActiveRecord: 0.5ms | Allocations: 2682)
+
+
+  [1m[36mBook Load (1.4ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+Started GET "/" for 192.168.65.1 at 2024-01-23 23:31:30 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BooksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (1.5ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:6
+  Rendered books/_book.html.erb (Duration: 15.5ms | Allocations: 7087)
+  Rendered books/index.html.erb within layouts/application (Duration: 41.6ms | Allocations: 14529)
+  Rendered layout layouts/application.html.erb (Duration: 42.2ms | Allocations: 14625)
+Completed 500 Internal Server Error in 60ms (ActiveRecord: 8.0ms | Allocations: 19470)
+
+
+  
+ActionView::Template::Error (undefined method `date' for #<Book id: 72, title: "1984", created_at: "2024-01-23 23:29:39.968657000 +0000", updated_at: "2024-01-23 23:29:39.968657000 +0000", author: "George Orwell", cost: 0.1005e2, publication_date: "1999-01-01">
+Did you mean?  update):
+     7:     <strong>Cost:</strong>
+     8:     <%= book.cost %>
+     9:     <strong>Date:</strong>
+    10:     <%= book.date %>
+    11:   </p>
+    12: 
+    13: </div>
+  
+app/views/books/_book.html.erb:10
+app/views/books/index.html.erb:7
+app/views/books/index.html.erb:6
+Started GET "/" for 192.168.65.1 at 2024-01-23 23:31:30 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by BooksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:6
+  Rendered books/_book.html.erb (Duration: 4.3ms | Allocations: 5703)
+  Rendered books/index.html.erb within layouts/application (Duration: 7.1ms | Allocations: 6648)
+  Rendered layout layouts/application.html.erb (Duration: 7.6ms | Allocations: 6727)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.3ms | Allocations: 7007)
+
+
+  
+ActionView::Template::Error (undefined method `date' for #<Book id: 72, title: "1984", created_at: "2024-01-23 23:29:39.968657000 +0000", updated_at: "2024-01-23 23:29:39.968657000 +0000", author: "George Orwell", cost: 0.1005e2, publication_date: "1999-01-01">
+Did you mean?  update):
+     7:     <strong>Cost:</strong>
+     8:     <%= book.cost %>
+     9:     <strong>Date:</strong>
+    10:     <%= book.date %>
+    11:   </p>
+    12: 
+    13: </div>
+  
+app/views/books/_book.html.erb:10
+app/views/books/index.html.erb:7
+app/views/books/index.html.erb:6
+Started GET "/" for 192.168.65.1 at 2024-01-23 23:31:42 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by BooksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (1.5ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:6
+  Rendered books/_book.html.erb (Duration: 3.9ms | Allocations: 234)
+  Rendered books/index.html.erb within layouts/application (Duration: 19.8ms | Allocations: 1770)
+  Rendered layout layouts/application.html.erb (Duration: 99.0ms | Allocations: 34256)
+Completed 200 OK in 111ms (Views: 104.5ms | ActiveRecord: 1.5ms | Allocations: 35236)
+
+
+Started GET "/books/72" for 192.168.65.1 at 2024-01-23 23:31:53 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"72"}
+  [1m[36mBook Load (2.9ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 72], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:63:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/_book.html.erb (Duration: 0.2ms | Allocations: 47)
+  Rendered books/show.html.erb within layouts/application (Duration: 3.4ms | Allocations: 979)
+  Rendered layout layouts/application.html.erb (Duration: 7.7ms | Allocations: 2419)
+Completed 200 OK in 70ms (Views: 8.5ms | ActiveRecord: 3.7ms | Allocations: 6925)
+
+
+Started GET "/books/72/edit" for 192.168.65.1 at 2024-01-23 23:31:55 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"72"}
+  [1m[36mBook Load (0.8ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 72], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:63:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering books/edit.html.erb within layouts/application
+  Rendered books/_form.html.erb (Duration: 12.4ms | Allocations: 3028)
+  Rendered books/edit.html.erb within layouts/application (Duration: 18.8ms | Allocations: 3390)
+  Rendered layout layouts/application.html.erb (Duration: 24.7ms | Allocations: 4836)
+Completed 200 OK in 35ms (Views: 25.9ms | ActiveRecord: 0.8ms | Allocations: 5706)
+
+
+Started PATCH "/books/72" for 192.168.65.1 at 2024-01-23 23:32:00 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by BooksController#update as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "book"=>{"title"=>"1984", "author"=>"George Orwell", "cost"=>"10.05", "publication_date"=>"1999-01-02"}, "commit"=>"Update Book", "id"=>"72"}
+  [1m[36mBook Load (0.6ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 72], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:63:in `set_book'
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/books_controller.rb:40:in `block in update'
+  [1m[36mBook Update (11.4ms)[0m  [1m[33mUPDATE "books" SET "updated_at" = $1, "publication_date" = $2 WHERE "books"."id" = $3[0m  [["updated_at", "2024-01-23 23:32:00.156653"], ["publication_date", "1999-01-02"], ["id", 72]]
+  ↳ app/controllers/books_controller.rb:40:in `block in update'
+  [1m[36mTRANSACTION (2.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/books_controller.rb:40:in `block in update'
+Redirected to http://0.0.0.0:3000/books/72
+Completed 302 Found in 38ms (ActiveRecord: 15.1ms | Allocations: 4410)
+
+
+Started GET "/books/72" for 192.168.65.1 at 2024-01-23 23:32:00 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by BooksController#show as TURBO_STREAM
+  Parameters: {"id"=>"72"}
+  [1m[36mBook Load (0.8ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 72], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:63:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/_book.html.erb (Duration: 0.1ms | Allocations: 37)
+  Rendered books/show.html.erb within layouts/application (Duration: 3.0ms | Allocations: 688)
+  Rendered layout layouts/application.html.erb (Duration: 9.9ms | Allocations: 2116)
+Completed 200 OK in 16ms (Views: 11.1ms | ActiveRecord: 0.8ms | Allocations: 2972)
+
+
+Started GET "/books" for 192.168.65.1 at 2024-01-23 23:32:03 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by BooksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.8ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:6
+  Rendered books/_book.html.erb (Duration: 0.2ms | Allocations: 34)
+  Rendered books/index.html.erb within layouts/application (Duration: 6.9ms | Allocations: 946)
+  Rendered layout layouts/application.html.erb (Duration: 19.5ms | Allocations: 2277)
+Completed 200 OK in 25ms (Views: 20.7ms | ActiveRecord: 0.8ms | Allocations: 2552)
+
+
