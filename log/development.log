@@ -4436,3 +4436,37 @@ Processing by BooksController#show as HTML
 Completed 200 OK in 33ms (Views: 14.3ms | ActiveRecord: 2.7ms | Allocations: 5581)
 
 
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE DATABASE "test_app_development" ENCODING = 'unicode'[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE DATABASE "test_app_test" ENCODING = 'unicode'[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7992348028875656775)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.7ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(7992348028875656775)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 192.168.65.1 at 2024-01-28 21:12:37 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BooksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (2.4ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:6
+  Rendered books/index.html.erb within layouts/application (Duration: 25.5ms | Allocations: 9163)
+  Rendered layout layouts/application.html.erb (Duration: 106.9ms | Allocations: 41599)
+Completed 200 OK in 125ms (Views: 101.9ms | ActiveRecord: 9.0ms | Allocations: 46503)
+
+
+Started GET "/books/180/edit" for 192.168.65.1 at 2024-01-28 21:12:41 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"180"}
+  [1m[36mBook Load (4.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 180], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:67:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering books/edit.html.erb within layouts/application
+  Rendered books/_form.html.erb (Duration: 26.9ms | Allocations: 4284)
+  Rendered books/edit.html.erb within layouts/application (Duration: 30.3ms | Allocations: 4712)
+  Rendered layout layouts/application.html.erb (Duration: 35.5ms | Allocations: 6161)
+Completed 200 OK in 74ms (Views: 38.1ms | ActiveRecord: 5.1ms | Allocations: 9038)
+
+
