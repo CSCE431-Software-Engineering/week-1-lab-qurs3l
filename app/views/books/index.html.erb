@@ -4,7 +4,7 @@
 
 <div id="books">
   <% @books.each do |book| %>
-    <%= render book %>
+    <p><%= book.title %></p>
     <p>
       <%= link_to "Show this book", book %>
       <%= link_to "Edit this book", edit_book_path(book) %>
