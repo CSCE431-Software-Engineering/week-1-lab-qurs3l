@@ -32,6 +32,21 @@
   </div>
 
   <div>
+    <%= form.label :publisher, style: "display: block" %>
+    <%= form.text_field :publisher %>
+  </div>
+
+  <div>
+    <%= form.label :pages, style: "display: block" %>
+    <%= form.text_field :pages %>
+  </div>
+
+  <div>
+    <%= form.label :release_date, style: "display: block" %>
+    <%= form.date_field :release_date  %>
+  </div>
+
+  <div>
     <%= form.submit %>
   </div>
 <% end %>
