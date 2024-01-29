@@ -24,4 +24,5 @@ RSpec.describe 'Creating a book', type: :feature do
     expect(page).to have_content('150')
     expect(page).to have_content('2024-02-01')
   end
+  
 end
